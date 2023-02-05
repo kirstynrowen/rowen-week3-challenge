@@ -7,9 +7,6 @@ var letterLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
 var numericChar = ["1","2","3","4","5","6","7","8","9"];
 var specialChar = ["!","@","#","$","%","?","&","*","(",")","_"]; 
 
-var approvedCriteria = '';
-var finalPassword = '';
-
 //Present user with prompts based on password criteria
 //Enter password length between 8-128 characters, present error alert if longer or shorter
 function generatePassword() {
@@ -36,16 +33,19 @@ function generatePassword() {
   }
     
   //validate user choices with if statements, randomly choose value from arrays and add to password
-    //if (addLetterUpper === true) {
-      
-  //  } if (addLetterLower === true) {
+  //need to fix?
+    var approvedCriteria = '';
 
-   // } if (addNumericChar === true) {
-
-    //} if (addspecialChar === true) {
-
-    //}
-
+    if (addLetterUpper === true) {
+      approvedCriteria = approvedCritera.concat(letterUpper);
+    } if (addLetterLower === true) {
+      approvedCriteria = approvedCriteria.concat(letterLower);
+    } if (addNumericChar === true) {
+      approvedCriteria = approvedCriteria.concat(numericChar);
+    } if (addspecialChar === true) {
+      approvedCriteria = approvedCriteria.concat(specialChar);
+    }
+    console.log(approvedCriteria);
 }
 
 // Write password to the #password input
