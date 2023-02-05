@@ -34,7 +34,7 @@ function generatePassword() {
     
   //validate user choices with if statements, randomly choose value from arrays and add to password
   //need to fix?
-    var approvedCriteria = '';
+    var approvedCriteria = "";
 
     if (addLetterUpper === true) {
       approvedCriteria = approvedCritera.concat(letterUpper);
@@ -46,6 +46,15 @@ function generatePassword() {
       approvedCriteria = approvedCriteria.concat(specialChar);
     }
     console.log(approvedCriteria);
+
+    var finalPassword = "";
+
+    //for loop to get final password
+    for (var i = 0 < confirmLength; i++) {
+      finalPassword = finalPassword + approvedCriteria[Math.floor(math.random() * approvedCriteria.length)];
+    }
+
+    return finalPassword;
 }
 
 // Write password to the #password input
