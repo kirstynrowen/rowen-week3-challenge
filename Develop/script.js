@@ -11,8 +11,9 @@ var specialChar = ["!","@","#","$","%","?","&","*","(",")","_"];
 //Enter password length between 8-128 characters, present error alert if longer or shorter
 function generatePassword() {
   var confirmLength = prompt("Please choose the length of your password (must be between 8 and 128 characters)");
+  confirmLength = parseInt(confirmLength);
 
-  if (confirmLength <= 7 || confirmLength >= 129) {
+  if (isNaN(confirmLength) || confirmLength <= 7 || confirmLength >= 129) {
     alert("Password must be between 8 and 128 characters");
    return;
   }
@@ -53,7 +54,7 @@ function generatePassword() {
     for (let index = 0; index < confirmLength; index++) {
       //finalPassword = finalPassword + approvedCriteria[Math.floor(math.random() * approvedCriteria.length)];
       var randomize = Math.floor(Math.random() * approvedCriteria.length);
-      finalPassword =+ approvedCriteria[randomize];
+      finalPassword += approvedCriteria[randomize];
     }
 
     return finalPassword;
