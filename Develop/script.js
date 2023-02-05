@@ -34,25 +34,25 @@ function generatePassword() {
     
   //validate user choices with if statements, randomly choose value from arrays and add to password
   //need to fix?
-    var approvedCriteria = [];
+    var approvedCriteria = "";
 
     if (addLetterUpper === true) {
-      approvedCriteria = approvedCritera.concat(letterUpper);
+      approvedCriteria = approvedCriteria.concat(letterUpper);
     } if (addLetterLower === true) {
       approvedCriteria = approvedCriteria.concat(letterLower);
     } if (addNumericChar === true) {
       approvedCriteria = approvedCriteria.concat(numericChar);
-    } if (addspecialChar === true) {
+    } if (addSpecialChar === true) {
       approvedCriteria = approvedCriteria.concat(specialChar);
     }
     console.log(approvedCriteria);
 
-    var finalPassword = [];
+    var finalPassword = "";
 
     //for loop to get final password
-    for (let index = 0; index < confirmLength.length; index++) {
-      //testing: finalPassword = finalPassword + approvedCriteria[Math.floor(math.random() * approvedCriteria.length)];
-      var randomize = Math.floor(math.random() * approvedCriteria.length);
+    for (let index = 0; index < confirmLength; index++) {
+      //finalPassword = finalPassword + approvedCriteria[Math.floor(math.random() * approvedCriteria.length)];
+      var randomize = Math.floor(Math.random() * approvedCriteria.length);
       finalPassword =+ approvedCriteria[randomize];
     }
 
